@@ -64,9 +64,22 @@ module teber
           return self
         end
     
+        def add_to_allure_env(params)
+          location =  File.join("#{Pathname.pwd}","reports/allure/environment.properties")
+          file = File.open(location,"a")
+          file.puts "#{params}\n"
+        end
+    
+        def self.direct_add_to_allure_env(params)
+          location =  File.join("#{Pathname.pwd}","reports/allure/environment.properties")
+          file = File.open(location,"a")
+          file.puts "#{params}\n"
+        end
+    
         def get(url)
           $focus_driver = self
           @driver.get(url)
+          add_to_allure_env("URL = #{url}")
           puts "#{$focus_driver} loaded with - #{url}"
         end
     
@@ -78,7 +91,7 @@ module teber
     
         def find_element(locator)
           $focus_driver = self
-          Libraries::Wait.wait_for_element(locator)
+          TestBdd::Wait.wait_for_element(locator)
           return @driver.find_element(locator.how,locator.what)
         end
     
@@ -93,7 +106,7 @@ module teber
           @driver.action.move_to(element).perform
           puts "mouse over for the element - #{locator.how} => #{locator.what} is done"
         end
-        
+    
         def mouse
           $focus_driver = self
           return @driver.mouse
@@ -111,9 +124,54 @@ module teber
           puts "Mouse over the locator and then click for - #{locator.how} => #{locator.what} is done"
         end
     
+        def browser
+          $focus_driver = self
+          @driver.browser
+        end
+    
+        def capabilities
+          $focus_driver = self
+          @driver.capabilities
+        end
+    
         def current_url
           $focus_driver = self
           @driver.current_url
+        end
+    
+        def execute_async_script(script, *args)
+          $focus_driver = self
+          @driver.execute_async_script(script, *args)
+        end
+    
+        def execute_script(script, *args)
+          $focus_driver = self
+          @driver.execute_script(script, *args)
+        end
+    
+        def inspect
+          $focus_driver = self
+          @driver.inspect
+        end
+    
+        def manage
+          $focus_driver = self
+          @driver.manage
+        end
+    
+        def navigate
+          $focus_driver = self
+          @driver.navigate
+        end
+    
+        def page_source
+          $focus_driver = self
+          @driver.page_source
+        end
+    
+        def body_text
+          $focus_driver = self
+          @driver.find_element(:css, 'body').text
         end
     
         def save_screenshot(file_name = nil)
@@ -186,7 +244,7 @@ module teber
           self.quit
           puts "deleted all the browsers"
         end
-  
+    
         def self.quit_all_drivers
           @@drivers.each do |driver|
             driver.quit if driver != self
@@ -197,13 +255,46 @@ module teber
         def self.get_all_drivers
           return @@drivers_with_names
         end
-  
+    
         def self.get_current_driver
           return $focus_driver
         end
     
+        def alert(ok_cancel)
+          sleep 2
+          alert = @driver.switch_to.alert
+          alertMsg=alert.text
+          if ok_cancel
+            alert.accept
+            puts "The alert was accepted in #{$focus_driver} with alert message #{alertMsg}"
+          else
+            alert.dismiss
+            puts "The alert was dismissed in #{$focus_driver} with alert message #{alertMsg}"
+          end
+          return alertMsg
+        end
+    
+        def is_alert_present?
+          begin
+            alert = @driver.switch_to.alert
+            alertMsg=alert.text
+            return true
+          rescue Exception => e
+            return false
+          end
+        end
+    
         def self.switch_to(driver)
           $focus_driver = driver
+        end
+    
+        def drag_and_drop(source_locator, target_locator)
+          source = find_element(source_locator)
+          target = find_element(target_locator)
+          @driver.action.click_and_hold(source).perform
+          @driver.action.move_to(target).release.perform
+          sleep 3
+          puts "In driver #{$focus_driver} - #{source_locator.how} => source_locator.what locator was dragged and moved to this locator #{target_locator.how} => #{target_locator.what}"
         end
   
       end

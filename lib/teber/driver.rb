@@ -91,7 +91,7 @@ module Teber
     
         def find_element(locator)
           $focus_driver = self
-          TestBdd::Wait.wait_for_element(locator)
+          Teber::Wait.wait_for_element(locator)
           return @driver.find_element(locator.how,locator.what)
         end
     

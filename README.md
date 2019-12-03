@@ -32,6 +32,10 @@ Or install it yourself as:
 
 This gem is to replace the library methods in [Teber-Ruby](https://github.com/nareshnavinash/Teber-Ruby) framework. This allows us to share the methods among different teams and completely ignore the repetitive work. For more details on Page object model for functional UI automation verify [Teber Ruby Documentation](https://nareshnavinash.github.io/Teber-Ruby/) page.
 
+### Adding new methods
+
+Add all the new methods inside /lib/teber/ path with the module name as 'Teber'. If added a new file, include the newly added file to the /lib/teber/teber.rb so that those methods will be available when we use the gem.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -41,6 +45,10 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/nareshnavinash/Teber-Gem/. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+## Authors
+
+* **[Naresh Sekar](https://github.com/nareshnavinash)**
 
 ## License
 

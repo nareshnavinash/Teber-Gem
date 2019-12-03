@@ -3,7 +3,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "teber/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "teber"
+  spec.name          = "teber-library"
   spec.version       = Teber::VERSION
   spec.authors       = ["Naresh Sekar"]
   spec.email         = ["nareshnavinash@gmail.com"]

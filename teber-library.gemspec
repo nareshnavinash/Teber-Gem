@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{To have all the common methods that are used for UI automation, this enables us to share the methods across teams}
   spec.homepage      = "https://nareshnavinash.wixsite.com/teber"
   spec.license       = "GPL-3.0"
+  spec.executables   << 'teber'
 
   # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 

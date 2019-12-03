@@ -4,10 +4,10 @@ Teber Library gem is to have all the common methods that will be used in functio
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Made with Ruby](https://img.shields.io/badge/Made%20with-Ruby-red.svg)](https://www.ruby-lang.org/en/)
-[![Published Gem](https://img.shields.io/badge/gem-teber-library-red.svg)](https://rubygems.org/gems/teber-library)
 [![StackOverflow](http://img.shields.io/badge/Stack%20Overflow-Ask-blue.svg)]( https://stackoverflow.com/users/10505289/naresh-sekar )
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![email me](https://img.shields.io/badge/Contact-Email-green.svg)](nareshnavinash@gmail.com)
+[![Gem Version](https://badge.fury.io/rb/teber-library.svg)](https://rubygems.org/gems/teber-library)
 
 
 ![alt text](lib/teber/Teber-Library-Gem.png)
@@ -35,6 +35,18 @@ This gem is to replace the library methods in [Teber-Ruby](https://github.com/na
 ### Adding new methods
 
 Add all the new methods inside /lib/teber/ path with the module name as 'Teber'. If added a new file, include the newly added file to the /lib/teber/teber.rb so that those methods will be available when we use the gem.
+
+### Require and Include
+
+To require this gem use,
+```
+require 'teber'
+```
+To Include the module `teber` in your project use,
+```
+include Teber
+```
+after which all the classes in this gem are directly exposed
 
 ## Development
 

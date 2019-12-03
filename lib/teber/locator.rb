@@ -66,6 +66,10 @@ module Teber
             index += 1
           end
         end
+
+        def scroll_to_locator(driver = $focus_driver)
+            $focus_driver.scroll_to_locator(self)
+        end
     
         def hash(driver = $focus_driver)
           driver.find_element(self).hash

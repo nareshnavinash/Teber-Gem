@@ -48,6 +48,14 @@ include Teber
 ```
 after which all the classes in this gem are directly exposed
 
+## Sample Project
+
+To get sample project in your working directory, try
+```
+teber example
+```
+Boom, you got your sample project in Page Object Model. For more details on the sample project visit [Teber-Ruby](https://nareshnavinash.github.io/Teber-Ruby/)
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

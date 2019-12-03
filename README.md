@@ -4,7 +4,7 @@ Teber Library gem is to have all the common methods that will be used in functio
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
 [![Made with Ruby](https://img.shields.io/badge/Made%20with-Ruby-red.svg)](https://www.ruby-lang.org/en/)
-[![Published Gem](https://img.shields.io/badge/gem-teber-library-red.svg)](https://rubygems.org/gems/teber-library)
+[![Gem Version](https://badge.fury.io/rb/teber-library.svg)](https://badge.fury.io/rb/teber-library)
 [![StackOverflow](http://img.shields.io/badge/Stack%20Overflow-Ask-blue.svg)]( https://stackoverflow.com/users/10505289/naresh-sekar )
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![email me](https://img.shields.io/badge/Contact-Email-green.svg)](nareshnavinash@gmail.com)

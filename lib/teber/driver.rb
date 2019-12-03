@@ -1,4 +1,4 @@
-module teber
+module Teber
     class Driver
         attr_accessor :driver
         $focus_driver = nil

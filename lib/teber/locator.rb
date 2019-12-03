@@ -1,4 +1,4 @@
-module teber
+module Teber
     class Locator
         attr_accessor :how
         attr_accessor :what

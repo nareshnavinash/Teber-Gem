@@ -31,4 +31,15 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 2.0"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_runtime_dependency 'selenium-webdriver', '3.142.6'
+  spec.add_runtime_dependency 'cucumber', '~> 3.1', '>= 3.1.2'
+  spec.add_runtime_dependency 'allure-cucumber', '~> 0.6.1'
+  spec.add_runtime_dependency 'rspec', '3.7.0'
+  spec.add_runtime_dependency 'parallel_tests', '2.21.0'
+  spec.add_runtime_dependency 'parseconfig', '1.0.8'
+  spec.add_runtime_dependency 'require_all', '~> 1.4', '>= 1.4.0'
+  spec.add_runtime_dependency 'os', '~> 0.9.6'
+  spec.add_runtime_dependency 'pry', '~> 0.10.4'
+  spec.add_runtime_dependency 'yaml_extend', '~> 0.2.0'
+  spec.add_runtime_dependency 'webdriver_manager', '~> 0.6.0'
 end

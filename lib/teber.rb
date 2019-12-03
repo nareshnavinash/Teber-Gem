@@ -2,6 +2,18 @@ require "teber/version"
 require "teber/driver"
 require "teber/wait"
 require "teber/locator"
+require 'fileutils'
+require 'selenium-webdriver'
+require 'yaml'
+require 'yaml_extend'
+require 'rspec/core'
+require 'parallel_tests'
+require 'optparse'
+require 'pry'
+require 'readline'
+require 'os'
+require 'fileutils'
+require 'webdriver_manager'
 
 module Teber
   class CLI

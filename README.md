@@ -36,6 +36,18 @@ This gem is to replace the library methods in [Teber-Ruby](https://github.com/na
 
 Add all the new methods inside /lib/teber/ path with the module name as 'Teber'. If added a new file, include the newly added file to the /lib/teber/teber.rb so that those methods will be available when we use the gem.
 
+### Require and Include
+
+To require this gem use,
+```
+require 'teber'
+```
+To Include the module `teber` in your project use,
+```
+include Teber
+```
+after which all the classes in this gem are directly exposed
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
